@@ -4,9 +4,6 @@
 
 def imprimir_arbol(lista, nivel=0):
     if lista != []:
-        # imprimir_arbol(lista[2], nivel + 1)
-        # print("    " * nivel + str(lista[0]) )
-        # imprimir_arbol(lista[1], nivel + 1)
         imprimir_arbol(lista[2], nivel + 1)
         print(" " * 4 * nivel + "->", lista[0])
         imprimir_arbol(lista[1], nivel + 1)
@@ -14,8 +11,9 @@ def imprimir_arbol(lista, nivel=0):
 
 def Mostrar_Propiedades(arbol):
     print(f"Altura del árbol: {altura_arbol(arbol)}")
-    print(f"Cantidad de nodos: {contar_nodos(arbol)}")
-    print(f"Longitud del Árbol: {longitud_arbol(arbol)}")
+    print(f"Peso del árbol: {contar_nodos(arbol)}")
+    print(f"Nodo más profundo: {nodo_mas_profundo(arbol)[0]}")
+
 
 
 def altura_arbol(arbol):
@@ -29,8 +27,16 @@ def contar_nodos(arbol):
         return 0
     return 1 + contar_nodos(arbol[1]) + contar_nodos(arbol[2])
 
-    
-def longitud_arbol(arbol):
+
+def nodo_mas_profundo(arbol, nivel=0):
     if not arbol:
-        return 0
-    return 1 + max(longitud_arbol(arbol[1]), longitud_arbol(arbol[2]))
+        return (None, -1)  # nodo, nivel
+    if not arbol[1] and not arbol[2]:
+        return (arbol[0], nivel)  # hoja
+    # Evaluar subárboles
+    nodo_izq, nivel_izq = nodo_mas_profundo(arbol[1], nivel + 1)
+    nodo_der, nivel_der = nodo_mas_profundo(arbol[2], nivel + 1)
+    if nivel_izq > nivel_der:
+        return (nodo_izq, nivel_izq)
+    else:
+        return (nodo_der, nivel_der)    
