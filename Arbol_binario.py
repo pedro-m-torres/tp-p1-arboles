@@ -1,45 +1,48 @@
-#Lista vacia
-arbol = []
-flag = True
+from arbol_add import *
 
-#Funcion para crear el arbol con la raiz y dos hijos
-def crear_arbol(lista, score):
-    if lista == []:
-        lista += [score,[],[]]
-    else:
-        ingresar_subarbol(lista,score)
+def main():
 
+    #Lista vacia
+    arbol = []
 
+    while True:
 
-def ingresar_subarbol(nodo,score):
-    if(score < nodo[0]):
-        if nodo[1] == []:
-            nodo[1] = [score, [],[]]
+        print("\nMenú:")
+        print("1) Agregar Puntajes")
+        print("2) Buscar Puntaje en el árbol")
+        print("3) Mostrar el puntaje mas alto del árbol")
+        print("4) Mostrar el puntaje mas bajo del árbol")
+        print("5) Recorrer el árbol inOrder")
+        print("6) Recorrer el árbol preOrder")
+        print("7) Recorrer el árbol postOrder")
+        print("8) Mostrar todos los puntajes")
+        print("9) Limpiar Puntajes")
+        print("0) Salir")
+
+        choice = input("Ingrese su opción (0-9): ")
+
+        if choice == '0':
+            break
+        elif choice == '1':
+            cargar_arbol(arbol)
+        elif choice == '2':
+            pass
+        elif choice == '3':
+            pass
+        elif choice == '4':
+            pass
+        elif choice == '5':
+            pass
+        elif choice == '6':
+            pass
+        elif choice == '7':
+            pass
+        elif choice == '8':
+            print(arbol)
+        elif choice == '9':
+            arbol = []
         else:
-            ingresar_subarbol(nodo[1],score)
+            print("Opción inválida. Intente de nuevo.")
 
-    elif(score > nodo[0]):
-        if nodo[2] == []:
-            nodo[2] = [score, [],[]]
-        else:
-            ingresar_subarbol(nodo[2],score)
-    
-
-while flag:
-    puntaje = int(input("Ingrese el puntaje: "))
-    if puntaje == 0:
-        flag = False
-        break
-    crear_arbol(arbol, puntaje)
-    print(arbol)
-
-print(arbol)
-
-    
-
-    
-    
-
-
-
-
+if __name__ == "__main__":
+    main()  
