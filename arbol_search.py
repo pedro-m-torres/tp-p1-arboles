@@ -1,15 +1,6 @@
-#Funcion para mostrar el arbol con una representar grafica.
-#En este caso como el formato de cada subarbol se representa [raiz,subarbol_izquierdo,subarbol_derecho]
-#Utilizamos la funcion de manera recursiva para encontrar el nodo mas alejado e imprimirlo multiplicando el nivel de espacios.
-def imprimir_arbol(lista, nivel=0):
-    if lista != []:
-        imprimir_arbol(lista[2], nivel + 1)
-        print("   " * nivel + str(lista[0]))
-        imprimir_arbol(lista[1], nivel + 1)
-
 #Funciones para buscar el valor mas alto y el valor mas bajo.
 #Teniendo en cuenta que el arbol binario ordena los valores mas altos del nodo raiz a la derecha y los bajos a la izquierda,
-#las funciones evualan recursivamente si el elemento [2] (derecha) y el elemento [1] izquierda esta vacio, en el caso de que asi sea:
+#las funciones evaluan recursivamente si el elemento [2] (derecha) y el elemento [1] izquierda esta vacio, en el caso de que asi sea:
 #no hay un valor mas alto o bajo a buscar entonces retorna ese nodo [0]
 
 def buscar_mayor(lista):

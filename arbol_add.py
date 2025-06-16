@@ -2,8 +2,14 @@
 def cargar_arbol(arbol):
     while True:
 
-        puntaje = int(input("Ingrese el puntaje (0 para salir): "))
+        puntaje = input("Ingrese el puntaje (0 para salir): ")
 
+        if puntaje.isdigit():
+            puntaje = int(puntaje)
+        else:
+            print("Por favor ingrese númerico!")
+            continue
+    
         if puntaje == 0:
             break
 
