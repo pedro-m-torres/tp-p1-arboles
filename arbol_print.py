@@ -4,9 +4,6 @@
 
 def imprimir_arbol(lista, nivel=0):
     if lista != []:
-        # imprimir_arbol(lista[2], nivel + 1)
-        # print("    " * nivel + str(lista[0]) )
-        # imprimir_arbol(lista[1], nivel + 1)
         imprimir_arbol(lista[2], nivel + 1)
         print(" " * 4 * nivel + "->", lista[0])
         imprimir_arbol(lista[1], nivel + 1)

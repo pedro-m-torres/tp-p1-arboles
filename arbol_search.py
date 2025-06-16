@@ -29,7 +29,7 @@ def buscar_valor(lista, valor):
         return True
     return buscar_valor(lista[1], valor) or buscar_valor(lista[2], valor)
 
-#Funcion que tiene como argumento un Booleano para determinar mostrar un mensaje si encontro el valor y otro si no lo encontro.
+#Funcion que tiene como argumento un Booleano para mostrar un mensaje si encontro el valor y otro si no lo encontro.
 def mostrar_mensaje(busqueda):
     if busqueda:
         print("Correcto, el valor se encuentra en el arbol.")
