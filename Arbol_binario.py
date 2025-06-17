@@ -65,7 +65,7 @@ def main():
             confirmar = input("¿Está seguro que desea borrar el árbol? (S/N): ")
             if confirmar.upper() == 'S':
                 arbol = []
-            print("Árbol borrado con éxito.")
+                print("Árbol borrado con éxito.")
             esperar = True
         else:
             print("Opción inválida. Intente de nuevo.")
